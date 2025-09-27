@@ -1,5 +1,8 @@
 package unisinos.prova;
 
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+
 public class Main {
 
 
@@ -35,8 +38,8 @@ public class Main {
 
             """;
 
-    final var lexer = new ProvaLexer(new org.antlr.v4.runtime.ANTLRInputStream(code));
-    final var tokens = new org.antlr.v4.runtime.CommonTokenStream(lexer);
+    final var lexer = new ProvaLexer(new ANTLRInputStream(code));
+    final var tokens = new CommonTokenStream(lexer);
     final var parser = new ProvaParser(tokens);
     final var tree = parser.parse();
 
